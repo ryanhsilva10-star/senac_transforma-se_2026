@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá mundo</h1>
+<h2>isso é uma mentira</h2>
+<p>Esse é o segundo site da <i>Geovanna</i></p>
+
+<h2>Isso é uma verdade</h2>
+<p>Essa é a 19° vez que eu venho no <b>Senac</b></p>
+
+<h2>Esse é o meu parágrafo de duas linhas</h2>
+<p>Essa é a primeira linha<br>
+    essa é a segunda linha
+</p>
+
+<h2>Meu formuário</h2>
+<p>Preencha as informações abaixo:</p>
+<form id="formRegister">
+
+    Nome: <input id="iName" type="text" placeholder="Digite seu nome completo"/>
+    Email: <input id= "iEmail" type="email" placeholder="Digite seu melhor email"/> <br>
+    Senha: <input id= "iPass" type="password" placeholder="Letra maiuscula e números"/> 
+    Data de nascimento: <input id= "iBirth" type="date" /><br>
+    <br>
+    <button type="submit">Salvar</button>
+    
+</form> 
+
+<h2>Resposta</h2>
+<pre id="pResponse"></pre>
+
+<script>
+   var formR = document.getElementById("formRegister");
+   // get = pegar, elemento = elemento do html
+   formR.addEventListener("submit", (e)=>{
+        e.preventDefault(); 
+
+// document é a pagína toda
+
+    let name =document.getElementById("iName").value
+    let email =document.getElementById("iEmail").value
+    let pass =document.getElementById("iPass").value
+    let birth =document.getElementById("iBirth").value
+
+    const user = {
+        nome: name,
+        email: email,
+        senha: pass,
+        nascimento: birth
+    }
+
+    let response = document.getElementById("pResponse")
+    response.innerHTML = JSON.stringify(user, null, 4);
+
+
+   })
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>
+

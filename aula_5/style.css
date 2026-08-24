@@ -1,0 +1,170 @@
+body{
+    margin: 0%;
+    padding: auto;
+    border: 0;
+    background-color: #fefefe;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    height: auto;
+    font-style: normal;
+
+}
+
+h2{
+    color: rgb(11, 85, 196);
+}
+nav{
+    background-color: rgb(11, 85, 196);
+    border-radius: 2px;
+    text-align: center; 
+}
+
+p{
+    color: #333;
+}
+
+a{
+    color: #f7f7f7f7;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+/* O # é para personalização por id
+#about{ O # é para personalização por id  
+    background-color: white;
+}*/
+section{
+background-color: #eaeaec;
+}
+
+footer{
+    background-color: #0326c0;
+}
+
+.max-w-lg{
+    max-width: 800px;
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.py-2{
+padding-top: 4px ;
+padding-bottom: 4px;
+}
+.py-3{
+padding-top: 8px;
+padding-bottom: 8px;
+}
+.py-4{
+padding-top: 16px;
+padding-bottom: 16px;
+}
+
+.px-2{
+padding-left: 4px;
+padding-right: 4px;
+}
+
+.px-4{
+padding-left: 16px;
+padding-right: 16px;
+}
+
+.bg-blue{
+    background-color: rgb(76, 169, 255);
+    border-radius: 3px;
+}
+
+.rounded{
+border-radius: 4px;
+}
+
+.rounded-md{
+border-radius: 8px;
+}
+
+.rounded-xl{
+border-radius: 12px;
+}
+
+.rounded-full{
+border-radius: 9999px;
+}
+
+.flex{
+    display: flex;
+}
+
+.gap-2{
+    gap:8px;
+}
+.gap-4{
+    gap:16px;
+}
+.gap-8{
+    gap:32px;
+}
+.items-center{
+    align-items: center;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.mr-2{
+    margin-right: 4px;
+}
+
+.shadow{
+    box-shadow:0 1px 3px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.shadow-md{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.30);
+}
+
+.shadow-lg{
+box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.abslute{
+position: absolute;
+}
+
+.fixed{
+position:fixed;
+}
+
+.top-0{
+top:0;
+}
+
+.left-0{
+    left:0;
+}
+
+.button-0{
+ bottom:0;
+}
+.bg-white{
+    background-color:white;
+}
+.w-full{
+    width: 100%;
+}
+h1{
+    color: aliceblue;
+}
+
+.max-h{
+    max-height: max-content;
+}
+
+
+
+  

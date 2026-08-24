@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Voltar</a>
+    </header>
+
+    <h2>Meu formuário</h2>
+    <p>Preencha as informações abaixo:</p>
+    <form id="formRegister">
+
+        Nome: <input id="iName" type="text" placeholder="Digite seu nome completo" />
+        Email: <input id="iEmail" type="email" placeholder="Digite seu melhor email" /> <br>
+        Senha: <input id="iPass" type="password" placeholder="Letra maiuscula e números" />
+        Data de nascimento: <input id="iBirth" type="date" /><br>
+        <br>
+        <button type="submit">Salvar</button>
+
+    </form>
+
+    <h2>Resposta</h2>
+    <pre id="pResponse"></pre>
+
+    <script>
+        var userr = [];
+        var formR = document.getElementById("formRegister");
+        // get = pegar, elemento = elemento do html
+        formR.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // document é a pagína toda
+
+            let name = document.getElementById("iName").value;
+            let email = document.getElementById("iEmail").value;
+            let pass = document.getElementById("iPass").value;
+            let birth = document.getElementById("iBirth").value;
+
+            const user = {
+                nome: name,
+                email: email,
+                senha: pass,
+                nascimento: birth
+            }
+            users.push(user)
+
+            let response = document.getElementById("pResponse")
+            response.innerHTML = JSON.stringify(user, null, 4);
+
+
+        })
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>
