@@ -3,7 +3,25 @@ var users = JSON.parse(localStorage.getItem("users")) || [];
 var loggeded = JSON.parse(localStorage.getItem("loggeded")) || {};
 var hello = document.getElementById("hello");
 if (hello && loggeded) hello.innerHTML = "Olá " + loggeded.nome
+//function name (parametro p1 p2){}*/
+function createBotton(text, classe, i) {
+    let bt = document.createElement("a");
+    bt.innerHTML = text;
+    bt.dataset.id = i;
 
+    classe.forEach((c) => {
+        bt.classList.add (c);
+    });
+    
+
+    bt.classList.add("cursor-pointer");
+    bt.classList.add("#feature");
+    bt.classList.add(".text-secondary")
+    
+    
+    return bt;
+
+}
 var listUsers = document.getElementById("listUsers")
 if (listUsers) {
     let i = 0
@@ -15,16 +33,10 @@ if (listUsers) {
         tdEmail.innerHTML = u.email;
 
         let tdAction = document.createElement("td");
-        let btV = document.createElement("a");
-        btV.innerHTML = "V";
-        btV.classList.add("show");
-        tdAction.appendChild(btV);
-
-        let btD = document.createElement("a");
-        btD.innerHTML = "D";
-        btD.classList.add("delete");
-        tdAction.appendChild(btD);
-
+        tdAction.createBotton(text, classe, i);
+        tdAction.appendChild(createBotton("V",[show,"cursor-pointe", "#feature", ".text-secondary" ]));
+        tdAction.appendChild(createBotton("X",[show,"cursor-pointe", "#feature", ".text-secondary" ]));
+        
         let tr = document.createElement("tr");
         tr.id = i;
         tr.appendChild(tdName);
@@ -44,8 +56,8 @@ botoesV.forEach((b) => {
 var botoesD = document.querySelectorAll(".delete");
 botoesD.forEach((b) => {
     b.addEventListener("click", () => {
-        const id = b.parentElement.parentElement.id;
-        users = users.filter((u) => (u.id) !== (id));
+        const id = b.dataset.id;
+        users.splice(id, 1);
         localStorage.setItem("users", JSON.stringify(users));
         window.location.href = "painel.html"
     })
@@ -76,27 +88,31 @@ formR?.addEventListener("click", (e) => {
     window.location.href = "painel.html"
 })
 
-var btL = document.getElementById("btLogin");
-if (btL) btL.addEventListener("click", (e) => {
+var formL = document.getElementById("btLogin");
+// get = pegar, elemento = elemento do html
+
+formL?.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // document é a pagína toda
     let email = document.getElementById("iEmailLogin").value;
     let pass = document.getElementById("iPassLogin").value;
 
     let user = users.find(u => {
         return u.email == email
     })
-
-    if (!user) {//not usuario
-        console.log("usuário não encontrado")
+    //not usuario
+    if (!user) {
+        console.log("Usuário não encontrado");
         return
     }
 
     if (user.senha == pass) {
-        console.log("usuário logado")
-        localStorage.setItem("loggeded", JSON.stringify(user))
+        console.log("Usuario Logado");
+        localStorage.setItem("logado", JSON.stringify(user));
         window.location.href = "painel.html"
+
     } else {
-        console.log("senha invalida")
+        console.log("Senha invalida");
     }
 })
