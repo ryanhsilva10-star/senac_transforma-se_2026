@@ -34,9 +34,9 @@ if (listUsers) {
 
         let tdAction = document.createElement("td");
         tdAction.createBotton(text, classe, i);
-        tdAction.appendChild(createBotton("V",[show,"cursor-pointe", "#feature", ".text-secondary" ]));
-        tdAction.appendChild(createBotton("X",[show,"cursor-pointe", "#feature", ".text-secondary" ]));
-        
+        tdAction.appendChild(createBotton("V",[show,"cursor-pointe", "#feature", ".text-secondary" ], i));
+        tdAction.appendChild(createBotton("X",[show,"cursor-pointe", "#feature", ".text-secondary" ], i));
+
         let tr = document.createElement("tr");
         tr.id = i;
         tr.appendChild(tdName);
